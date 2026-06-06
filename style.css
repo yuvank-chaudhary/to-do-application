@@ -1,27 +1,130 @@
-body{
-    background-color: aqua;
+* {
+    padding: 0%;
+    margin: 0%;
+    border: 0px;
+
 }
 
-.nevbar{
-    background-color: black;
+body {
+    background-color: #fafaf9;
+}
+
+.both {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.nevbar {
+    background-color: #2e2528;
     display: flex;
     height: 2rem;
 }
 
-.to-do{
-    margin-top: 20px;
-    background-color: blue;
+.to-do {
+    box-shadow: 0px 0px 30px #2e2528;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-color: #4a3740;
     width: 50vh;
-    height: 80vh;
+    height: auto;
+    border-radius: 15px;
 }
 
-h1{
+.task-row {
+    display: flex;
+    /* align-items: flex-start; */
+    justify-content: flex-start; 
+    gap: 15px;
+    margin-top: 20px;      
+    width: 100%;
+}
+
+.box {
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    height: 3rem;
+    width: 3rem;
+    outline: 2.5px solid #010305;
+    outline-offset: 2px;
+    border: 0px 0px 0px 0px;
+    padding: 0%;
+}
+
+.text_box {
+    text-align: left;
+    margin-left: 5px;
+    height: 40px;
+    width: 75%;
+    border: 0px 0px 0px 0px;
+}
+
+.list {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #f43f5e;
+    text-align: center;
+
+}
+
+
+
+/*------------------------------- clock ----------------------------------------*/
+
+.fixing{
+    width: 50vh;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock {
+    font-size: 25px;
+    color: white;
+    margin-top: 20px;
+    height: 300px;
+    width: 300px;
+    background-color: #2e2528;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 0px rgb(77, 71, 71);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock span {
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
     text-align: center;
 }
 
-.box{
-    height: 40px;
-    width: 40px;
-    outline: 2.5px solid #010305;
-    outline-offset: 2px;
+.clock span b {
+    display: inline-block;
+    position: absolute;
+    transform: rotate(calc(-30deg * var(--i)));
 }
+
+.clock::before{
+            position: absolute;
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .hand i{
+            height: var(--h);
+            width: 4px;
+            background-color: var(--clr);
+            position: absolute;
+            border-radius: 8px;
+        }
+        .hand{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
